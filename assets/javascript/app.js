@@ -68,7 +68,7 @@ function generateLoss() {
 }
 
 function generateHTML() {
-	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>15</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>A. " + answerArray[questionCounter][0] + "</p><p class='answer'>B. "+answerArray[questionCounter][1]+"</p><p class='answer'>C. "+answerArray[questionCounter][2]+"</p><p class='answer'>D. "+answerArray[questionCounter][3]+"</p>";
+	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>20</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>A. " + answerArray[questionCounter][0] + "</p><p class='answer'>B. "+answerArray[questionCounter][1]+"</p><p class='answer'>C. "+answerArray[questionCounter][2]+"</p><p class='answer'>D. "+answerArray[questionCounter][3]+"</p>";
 	$(".mainArea").html(gameHTML);
 }
 
@@ -76,7 +76,7 @@ function wait() {
 	if (questionCounter < 7) {
 	questionCounter++;
 	generateHTML();
-	counter = 15;
+	counter = 20;
 	timerWrapper();
 	}
 	else {
@@ -85,8 +85,8 @@ function wait() {
 }
 
 function timerWrapper() {
-	theClock = setInterval(fifteenSeconds, 1000);
-	function fifteenSeconds() {
+	theClock = setInterval(twentySeconds, 1000);
+	function twentySeconds() {
 		if (counter === 0) {
 			clearInterval(theClock);
 			generateLossDueToTimeOut();
@@ -108,7 +108,7 @@ function resetGame() {
 	correctTally = 0;
 	incorrectTally = 0;
 	unansweredTally = 0;
-	counter = 15;
+	counter = 20;
 	generateHTML();
 	timerWrapper();
 }
@@ -125,13 +125,13 @@ function resetGame() {
 
 var startScreen;
 var gameHtml; 
-var counter = 15;
-var questionArray = [" ", " ", " "," "," ",];
-var answerArray = [[" ", " ", " "," "," ",],[" ", " ", " "," "," ",],[" ", " ", " "," "," ",],[" ", " ", " "," "," ",],[" ", " ", " "," "," ",]];
-var imageArray = ["<img class='center-block img-right' src='assets/images/prada.gif'>", "<img class='center-block img-right' src='assets/images/louis.gif'>", "<img class='center-block img-right' src='assetes/images/dior.gif'>", "<img class='center-block img-right' src='assets/images/mcqueen.gif'>", "<img class='center-block img-right' src='images/versace.gif'>"];
-var correctAnswers = [" ", " ", " "," "," ",];
+var counter = 20;
+var questionArray = ["What brand is this? Miuccia took over the family-owned luxury goods manufacturer in 1978","What brand is this? Marc Jacobs was the creative director for 16 years for this french label","What brand is this? Raf Simons left his position after 3 years from this french house","What brand is this? This designer showed his last runway collection in 2010 before his death ","What brand is this? Donatalla took over this house after her brother's death",];
+var answerArray = [["Prada", "Missoni", "Fendi","Bottega Veneta",],["Marc Jacobs", "Balenciaga", "Louis Vuitton","Christian Dior",],["Raf Simons", "Jil Sander", "Helmut Lang","Dior",],["Givenchy", "Balmain","Alexander McQueen","Oscar de la Renta",],["Gucci", "Versace", "Salvatore Ferragamo","Yves Saint Laurent",]];
+var imageArray = ["<img class='center-block img-right' src='assets/images/prada.gif'>", "<img class='center-block img-right' src='assets/images/louis.gif'>", "<img class='center-block img-right' src='assets/images/dior.gif'>", "<img class='center-block img-right' src='assets/images/mcqueen.gif'>", "<img class='center-block img-right' src='assets/images/versace.gif'>"];
+var correctAnswers = ["A. Prada","C. Louis Vuitton","D. Dior","C. Alexander McQueen","B. Versace",];
 var questionCounter = 0;
-var selecterAnswer;
+var selectedAnswer;
 var theClock;
 var correctTally = 0;
 var incorrectTally = 0;
