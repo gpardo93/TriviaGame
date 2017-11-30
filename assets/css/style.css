@@ -34,7 +34,8 @@ header {
 }
 
 .answer:hover {
-  background: pink;
+  background: gray;
+  border-color: black;
 }
 
 .answer {
@@ -43,7 +44,7 @@ header {
   color: black;
   padding-left: 14px;
   background-color: white;
-  border-radius: 4px;
+  border-radius: 20px;
 }
 
 .img-wrong {
